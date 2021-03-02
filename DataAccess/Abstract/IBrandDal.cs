@@ -5,8 +5,8 @@ using Entities.Concrete;
 
 namespace DataAccess.Abstract
 {
-    public interface ICarDal : IEntityRepository<Car>//.NET DataAccess için genelde Dal isimlendirmesi kullanılır
+    interface IBrandDal : IEntityRepository<Car>
     {
-       
+
     }
 }

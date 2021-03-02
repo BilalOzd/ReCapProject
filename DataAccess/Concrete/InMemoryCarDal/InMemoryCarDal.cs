@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using DataAccess.Abstract;
 using Entities.Concrete;
@@ -15,13 +16,13 @@ namespace DataAccess.Concrete
         {
             _cars = new List<Car>
             {
-                new Car{Id=1, BrandId=1, ColorId=1, DailyPrice=220000, Description="Honda Civic", ModelYear=2018},
-                new Car{Id=2, BrandId=2, ColorId=2, DailyPrice=290000, Description="Volkswagen Passat", ModelYear=2017},
-                new Car{Id=3, BrandId=2, ColorId=1, DailyPrice=190000, Description="Volkswagen Golf", ModelYear=2016},
-                new Car{Id=4, BrandId=3, ColorId=3, DailyPrice=250000, Description="Toyota Corolla", ModelYear=2020},
-                new Car{Id=5, BrandId=4, ColorId=3, DailyPrice=110000, Description="Hyundai Accent Blue", ModelYear=2014}
+                new Car{Id=1, BrandId=4, ColorId=10, DailyPrice=220000, Description="Honda Civic", ModelYear=2018},
+                new Car{Id=2, BrandId=1, ColorId=11, DailyPrice=290000, Description="Volkswagen Passat", ModelYear=2017},
+                new Car{Id=3, BrandId=1, ColorId=10, DailyPrice=190000, Description="Volkswagen Golf", ModelYear=2016},
+                new Car{Id=4, BrandId=2, ColorId=12, DailyPrice=250000, Description="Toyota Corolla", ModelYear=2020},
+                new Car{Id=5, BrandId=3, ColorId=12, DailyPrice=110000, Description="Hyundai i30", ModelYear=2014}
             };
-        }
+        }       
 
         public void Add(Car car)
         {
@@ -55,5 +56,14 @@ namespace DataAccess.Concrete
             return _cars.Where(c => c.Id == Id).ToList(); //"Where belirlenen duruma göre LİSTE oluşturur"
         }
 
+        public List<Car> GetAll(Expression<Func<Car, bool>> filter = null)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Car Get(Expression<Func<Car, bool>> filter)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
