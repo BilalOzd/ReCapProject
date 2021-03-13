@@ -14,7 +14,6 @@ namespace Console
         {
             CarManager carManager = new CarManager(new EfCarDal());
 
-
             foreach (var car in carManager.GetAll())
             {
                 System.Console.WriteLine(car.Description);
@@ -27,8 +26,6 @@ namespace Console
                 System.Console.WriteLine(car.Description);
                 System.Console.WriteLine(car.DailyPrice);
             }
-
-
 
             //InMemoryCarDal newCar = new InMemoryCarDal();
             //var result = newCar.Find()

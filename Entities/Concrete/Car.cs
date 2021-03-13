@@ -11,7 +11,7 @@ namespace Entities.Concrete
         public int BrandId { get; set; }
         public int ColorId { get; set; } //colorid 10 = beyaz, 11 = siyah, 12 = mavi
         public int ModelYear { get; set; }
-        public long DailyPrice { get; set; }
+        public decimal DailyPrice { get; set; }
         public string Description { get; set; }
     }
 }

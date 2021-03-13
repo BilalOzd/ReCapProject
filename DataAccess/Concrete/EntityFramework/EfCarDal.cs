@@ -14,19 +14,18 @@ namespace DataAccess.Concrete.EntityFramework
         public void Add(Car entity)
         {
             using (SampleDatabaseContext context = new SampleDatabaseContext())//belleği temizliyor, performans artıyor
-            {
-                
+            {               
                 var addedEntity = context.Entry(entity);//referansı yakalama
                 addedEntity.State = EntityState.Added;//ekleme
-                context.SaveChanges();
+                context.SaveChanges();               
             }
+            //dispose: "using" içindeki işlem bittikten sonra bellekten siler ve performansı artırır.
         }
 
         public void Delete(Car entity)
         {
             using (SampleDatabaseContext context = new SampleDatabaseContext())
             {
-
                 var deletedEntity = context.Entry(entity);
                 deletedEntity.State = EntityState.Deleted;
                 context.SaveChanges();
@@ -55,7 +54,6 @@ namespace DataAccess.Concrete.EntityFramework
         {
             using (SampleDatabaseContext context = new SampleDatabaseContext())
             {
-
                 var updatedEntity = context.Entry(entity);
                 updatedEntity.State = EntityState.Modified;
                 context.SaveChanges();
